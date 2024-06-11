@@ -1,0 +1,32 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.text-center{
+  margin-top: 100px;
+}
+
+.form-control{
+  margin-bottom: 5px;
+}
+
+.btn-primary{
+  width: 100%;
+  height: 40px;
+}
+
+.list-group {
+  margin-top: 20px;
+}
+
+.btn-danger{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
