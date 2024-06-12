@@ -3,12 +3,12 @@ document.getElementById("getWeather").addEventListener("click", function () {
 });
 
 async function getWeather() {
-  console.log('inside function');
-  const city = document.getElementById('city').value;
+  console.log("inside function");
+  const city = document.getElementById("city").value;
   console.log(city);
 
-  if (city !== '') {
-    console.log('if');
+  if (city !== "") {
+    console.log("if");
     const url = `https://open-weather13.p.rapidapi.com/city/${city}/EN`;
     const options = {
       method: "GET",
@@ -26,25 +26,23 @@ async function getWeather() {
     } catch (error) {
       console.error(error);
     }
-   
   } else {
     alert("Please Enter the valid Co-ordinates");
   }
 }
 
-function ShowingTheData(result){
+function ShowingTheData(result) {
   console.log(result.temp);
-  if(result.cod == 404){
-    document.getElementById('dynamicDisplay').innerHTML = "City Not Found";
-  }
-  else{
-    const tempInCel = Math.round((result.main.temp-32)*5/9) 
+  if (result.cod == 404) {
+    document.getElementById("dynamicDisplay").innerHTML = "City Not Found";
+  } else {
+    const tempInCel = Math.round(((result.main.temp - 32) * 5) / 9);
     const displayTheData = `
           <h1>Weather in ${result.name}, ${result.sys.country}</h1>
           <p>temprature is ${tempInCel}</p>
           <p>discription ${result.weather[0].description}</p>
           <p>humadity ${result.main.humidity}</p>
           <p>Wind Speed ${result.wind.speed}</p>`;
-          document.getElementById('dynamicDisplay').innerHTML = displayTheData;
+          document.getElementById("dynamicDisplay").innerHTML = displayTheData;
   }
 }
