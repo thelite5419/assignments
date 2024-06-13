@@ -3,9 +3,7 @@ document.getElementById("getWeather").addEventListener("click", function () {
 });
 
 async function getWeather() {
-  console.log("inside function");
   const city = document.getElementById("city").value;
-  console.log(city);
 
   if (city !== "") {
     console.log("if");
@@ -17,11 +15,9 @@ async function getWeather() {
         "x-rapidapi-host": "open-weather13.p.rapidapi.com",
       },
     };
-
     try {
       const response = await fetch(url, options);
       const result = await response.json();
-      console.log(result);
       ShowingTheData(result);
     } catch (error) {
       console.error(error);
@@ -32,7 +28,6 @@ async function getWeather() {
 }
 
 function ShowingTheData(result) {
-  console.log(result.temp);
   if (result.cod == 404) {
     document.getElementById("dynamicDisplay").innerHTML = "City Not Found";
   } else {
