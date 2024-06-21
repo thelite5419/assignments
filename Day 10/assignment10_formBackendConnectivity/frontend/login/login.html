@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <header>Login Here!</header>
+        <form id="login-form" class="form">
+          <div class="input-box">
+            <label>Email Address</label>
+            <input
+              type="text"
+              placeholder="Enter email address"
+              id="emailid"
+              onkeyup="validateEmail()"
+              onblur="validateEmail()"
+              required
+            />
+            <div style="color: red" id="emailvalidation"></div>
+          </div>
+          <div class="input-box">
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Enter password"
+              id="passid"
+              onkeyup="validatePassword()"
+              onblur="validatePassword()"
+              required
+            />
+            <div style="color: red" id="passvalidation"></div>
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <p>don't have an account <a href="../register/Registration.html">register here</a></p>
+        </form>
+      </div>
+    </section>
+   <script src="script.js"></script>
+  </body>
+</html>
